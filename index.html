@@ -1,0 +1,329 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>rideX — эндуро-прокат в Киеве</title>
+  <meta name="description" content="Эндуро-прокат с экипировкой, инструктором и маршрутами для любого уровня. Выбери мотоцикл и запишись на заезд.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="ru_UA">
+  <meta property="og:title" content="rideX — эндуро-прокат в Киеве">
+  <meta property="og:description" content="Эндуро-прокат с экипировкой, инструктором и маршрутами для любого уровня.">
+  <meta property="og:image" content="/og.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="stylesheet" href="styles.css">
+  <script src="js/script.js" defer></script>
+</head>
+<body>
+  <main>
+    <section class="hero" id="top">
+      <header class="header">
+        <a class="logo" href="#top" aria-label="rideX — на главную">ride<span>X</span></a>
+
+        <nav class="header__nav" id="main-nav" aria-label="Основная навигация">
+          <a href="#bikes">Мотоциклы</a>
+          <a href="#prices">Цены</a>
+          <a href="#certificate">Сертификаты</a>
+          <a href="#location">Как нас найти</a>
+        </nav>
+
+        <div class="header__actions">
+          <a class="header__phone" href="tel:+380670000000">+38 067 000 00 00</a>
+          <a class="button button--small button--white" href="#booking">Записаться</a>
+        </div>
+
+        <button class="header__menu-toggle" type="button" aria-label="Открыть меню" aria-expanded="false" aria-controls="main-nav">
+          <span></span>
+          <span></span>
+        </button>
+      </header>
+
+      <div class="hero__inner container">
+        <div class="hero__content">
+          <p class="eyebrow eyebrow--light"><span>Киев</span> · эндуро-прокат</p>
+          <h1>За пределы <em>дорог</em></h1>
+          <p class="hero__lead">Техника, экипировка и маршрут уже готовы. Тебе остаётся только завести мотор.</p>
+          <div class="hero__actions">
+            <a class="button button--white" href="#booking">Выбрать заезд <span>↗</span></a>
+            <a class="text-link text-link--light" href="#bikes">Смотреть парк <span>↓</span></a>
+          </div>
+          <div class="hero__stats" aria-label="Преимущества rideX">
+            <div><strong>12</strong><span>мотоциклов</span></div>
+            <div><strong>7</strong><span>маршрутов</span></div>
+            <div><strong>0</strong><span>опыта нужно</span></div>
+          </div>
+        </div>
+
+        <div class="hero__visual" aria-label="Эндуро-райдер на лесной трассе">
+          <div class="hero__photo">
+            <img src="images/hero-enduro.jpg" alt="Эндуро-райдер едет по лесной трассе">
+          </div>
+          <div class="hero__badge"><span>от</span><strong>3 490</strong><span>₴ / заезд</span></div>
+          <div class="hero__route"><span class="hero__pulse"></span>Ближайший старт: сегодня, 16:30</div>
+          <div class="hero__decoration" aria-hidden="true">X</div>
+        </div>
+      </div>
+
+      <div class="hero__ticker" aria-hidden="true">
+        <span>Экипировка включена</span><b>✦</b><span>Подходит новичкам</span><b>✦</b><span>Инструктор рядом</span><b>✦</b><span>Настоящие маршруты</span>
+      </div>
+    </section>
+
+    <section class="bikes section" id="bikes">
+      <div class="container">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Парк rideX · 2026</p>
+            <h2>Выбери свой<br><span>характер</span></h2>
+          </div>
+          <p class="section-heading__intro">От понятного четырёхтактника для первого старта до лёгкого двухтактного аппарата для хардовых подъёмов.</p>
+        </div>
+
+        <div class="bikes__grid">
+          <article class="bike-card">
+            <div class="bike-card__photo">
+              <img src="images/bike-light.jpg" alt="BSE Z5 на маршруте" loading="lazy">
+              <span class="bike-card__number">01</span>
+              <span class="bike-card__level">Первый выезд</span>
+            </div>
+            <div class="bike-card__info">
+              <div><p>Лёгкий эндуро · 250 см³</p><h3>BSE Z5</h3></div>
+              <a href="#booking" aria-label="Забронировать BSE Z5">↗</a>
+            </div>
+            <ul class="bike-card__specs"><li>21 л.с.</li><li>112 кг</li><li>мягкая тяга</li></ul>
+          </article>
+
+          <article class="bike-card">
+            <div class="bike-card__photo">
+              <img src="images/bike-pro.jpg" alt="KAYO T4 на маршруте" loading="lazy">
+              <span class="bike-card__number">02</span>
+              <span class="bike-card__level">Есть опыт</span>
+            </div>
+            <div class="bike-card__info">
+              <div><p>Боевой эндуро · 250 см³</p><h3>KAYO T4</h3></div>
+              <a href="#booking" aria-label="Забронировать KAYO T4">↗</a>
+            </div>
+            <ul class="bike-card__specs"><li>27 л.с.</li><li>6 передач</li><li>энергоёмкая подвеска</li></ul>
+          </article>
+
+          <article class="bike-card">
+            <div class="bike-card__photo">
+              <img src="images/hero-enduro.jpg" alt="BETA RR на маршруте" loading="lazy">
+              <span class="bike-card__number">03</span>
+              <span class="bike-card__level">Уверенный райдер</span>
+            </div>
+            <div class="bike-card__info">
+              <div><p>Хард-эндуро · 300 см³</p><h3>BETA RR</h3></div>
+              <a href="#booking" aria-label="Забронировать BETA RR">↗</a>
+            </div>
+            <ul class="bike-card__specs"><li>2T</li><li>103 кг</li><li>максимум тяги</li></ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="benefits">
+      <div class="benefits__photo">
+        <img src="images/bike-pro.jpg" alt="Райдер выполняет прыжок на эндуро-мотоцикле" loading="lazy">
+      </div>
+      <div class="benefits__content">
+        <p class="eyebrow eyebrow--light">Включено в каждый заезд</p>
+        <h2>Тебе —<br>эмоции.<br><span>Остальное — нам.</span></h2>
+        <ul class="benefits__list">
+          <li><b>01</b><span><strong>Исправная техника</strong>Мотоцикл проходит проверку перед каждым стартом.</span></li>
+          <li><b>02</b><span><strong>Защита с головы до ног</strong>Экипировка включена в тариф и подбирается по размеру.</span></li>
+          <li><b>03</b><span><strong>Инструктор на маршруте</strong>Держит темп группы и помогает на сложных участках.</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="prices section" id="prices">
+      <div class="container">
+        <div class="section-heading section-heading--light">
+          <div>
+            <p class="eyebrow eyebrow--light">Цены без сюрпризов</p>
+            <h2>Сколько<br><span>огня?</span></h2>
+          </div>
+          <p class="section-heading__intro">Во всех тарифах уже есть мотоцикл, бензин, экипировка, инструктаж и сопровождение.</p>
+        </div>
+
+        <div class="prices__grid">
+          <article class="price-card">
+            <div class="price-card__header"><span>Пробный</span></div>
+            <h3>2 часа</h3>
+            <p>Чтобы понять, почему эндуро затягивает</p>
+            <div class="price-card__value">3 490 ₴</div>
+            <ul>
+              <li>✓ мотоцикл и топливо</li>
+              <li>✓ полная экипировка</li>
+              <li>✓ инструктор в группе</li>
+              <li>✓ базовый маршрут</li>
+            </ul>
+            <a class="button button--outline button--full" href="#booking">Выбрать тариф <span>↗</span></a>
+          </article>
+
+          <article class="price-card price-card--featured">
+            <div class="price-card__header"><span>Главный хит</span><b>выбирают чаще</b></div>
+            <h3>4 часа</h3>
+            <p>Полноценное приключение с паузой на кофе</p>
+            <div class="price-card__value">5 490 ₴</div>
+            <ul>
+              <li>✓ мотоцикл и топливо</li>
+              <li>✓ полная экипировка</li>
+              <li>✓ инструктор в группе</li>
+              <li>✓ 2 уровня маршрута</li>
+            </ul>
+            <a class="button button--dark button--full" href="#booking">Выбрать тариф <span>↗</span></a>
+          </article>
+
+          <article class="price-card">
+            <div class="price-card__header"><span>Максимум</span></div>
+            <h3>Весь день</h3>
+            <p>Дальняя трасса, техника и много грязи</p>
+            <div class="price-card__value">8 990 ₴</div>
+            <ul>
+              <li>✓ до 7 часов катания</li>
+              <li>✓ индивидуальный темп</li>
+              <li>✓ обед на маршруте</li>
+              <li>✓ экшн-фото на память</li>
+            </ul>
+            <a class="button button--outline button--full" href="#booking">Выбрать тариф <span>↗</span></a>
+          </article>
+        </div>
+        <p class="prices__note">* Финальная стоимость зависит от выбранной модели и индивидуального формата.</p>
+      </div>
+    </section>
+
+    <section class="steps section">
+      <div class="container">
+        <div class="steps__title">
+          <p class="eyebrow eyebrow--light">Как всё проходит</p>
+          <h2>От заявки<br>до старта</h2>
+        </div>
+        <div class="steps__grid">
+          <article class="step-card"><span>01</span><h3>Оставь заявку</h3><p>Выбери дату, формат и оставь контакты — ответим в течение 15 минут.</p></article>
+          <article class="step-card"><span>02</span><h3>Подбери экипировку</h3><p>На базе выдадим шлем, защиту, форму, перчатки и мотоботы по размеру.</p></article>
+          <article class="step-card"><span>03</span><h3>Пройди инструктаж</h3><p>Объясним управление, стойку и безопасно потренируемся на площадке.</p></article>
+          <article class="step-card"><span>04</span><h3>Жми на газ</h3><p>Инструктор поведёт по маршруту под твой уровень — от лайта до хард-эндуро.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="certificate section" id="certificate">
+      <div class="container certificate__inner">
+        <div class="certificate__content">
+          <p class="eyebrow">Подарок, который не пылится</p>
+          <h2>Сертификат<br>на <span>драйв</span></h2>
+          <p>Выбирай номинал или конкретный заезд. Пришлём электронный сертификат на почту — можно подарить даже сегодня.</p>
+          <div class="certificate__values">
+            <a href="mailto:hello@ridex.ua?subject=Сертификат%20rideX%20на%203500%20грн">3 500 ₴</a>
+            <a href="mailto:hello@ridex.ua?subject=Сертификат%20rideX%20на%205500%20грн">5 500 ₴</a>
+            <a href="mailto:hello@ridex.ua?subject=Сертификат%20rideX%20на%209000%20грн">9 000 ₴</a>
+          </div>
+          <a class="button button--dark" href="mailto:hello@ridex.ua?subject=Хочу%20подарочный%20сертификат%20rideX">Заказать сертификат <span>↗</span></a>
+        </div>
+
+        <div class="certificate__visual">
+          <div class="certificate__photo"><img src="images/certificate.jpg" alt="Эндуро-райдер на лесном маршруте" loading="lazy"></div>
+          <div class="gift-card">
+            <div class="gift-card__logo">ride<span>X</span></div>
+            <p>ПОДАРОЧНЫЙ<br>СЕРТИФИКАТ</p>
+            <small>НА ЭНДУРО-ПРИКЛЮЧЕНИЕ</small>
+            <b>5 500 ₴</b>
+            <i>ЭМОЦИИ ВНУТРИ →</i>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="location" id="location">
+      <div class="location__map" aria-label="Схематичная карта проезда к базе rideX">
+        <div class="location__map-grid"></div>
+        <div class="location__road location__road--one"></div>
+        <div class="location__road location__road--two"></div>
+        <div class="location__pin"><span>X</span><b>rideX</b></div>
+        <div class="location__label location__label--city">КИЕВ</div>
+        <div class="location__label location__label--forest">ГОЛОСЕЕВСКИЙ ЛЕС</div>
+      </div>
+      <div class="location__content">
+        <p class="eyebrow eyebrow--light">Как нас найти</p>
+        <h2>20 минут<br>от <span>Теремков</span></h2>
+        <p>База rideX находится в Голосеевском районе. После записи отправим точную геометку и схему въезда.</p>
+        <div class="location__facts">
+          <div><b>ПАРКОВКА</b><span>Бесплатно на территории</span></div>
+          <div><b>ГРАФИК</b><span>Ежедневно, 09:00–20:00</span></div>
+        </div>
+        <a class="button button--white" href="https://maps.google.com/?q=Holosiivskyi+Kyiv" target="_blank" rel="noopener noreferrer">Открыть район на карте <span>↗</span></a>
+      </div>
+    </section>
+
+    <section class="booking section" id="booking">
+      <div class="container booking__inner">
+        <div class="booking__content">
+          <p class="eyebrow">Запись на заезд</p>
+          <h2>Готов<br><span>испачкаться?</span></h2>
+          <p>Оставь контакты. Подберём мотоцикл и маршрут под твой опыт, подтвердим свободное время по телефону или почте.</p>
+          <a class="booking__phone" href="tel:+380670000000">+38 067 000 00 00</a>
+          <a class="booking__email" href="mailto:hello@ridex.ua">hello@ridex.ua</a>
+        </div>
+
+        <div class="booking-form">
+          <form id="booking-form">
+            <div class="booking-form__row">
+              <label>Имя<input type="text" name="name" placeholder="Как к тебе обращаться" autocomplete="name" required></label>
+              <label>Телефон<input type="tel" name="phone" placeholder="+38 0__ ___ __ __" autocomplete="tel" required></label>
+            </div>
+            <label>Почта<input type="email" name="email" placeholder="you@email.com" autocomplete="email" required></label>
+            <div class="booking-form__row">
+              <label>Опыт
+                <select name="experience" required>
+                  <option value="" selected disabled>Выбери уровень</option>
+                  <option>Никогда не ездил</option>
+                  <option>Ездил пару раз</option>
+                  <option>Уверенный райдер</option>
+                </select>
+              </label>
+              <label>Формат
+                <select name="format">
+                  <option>2 часа</option>
+                  <option selected>4 часа</option>
+                  <option>Весь день</option>
+                </select>
+              </label>
+            </div>
+            <label>Желаемая дата<input type="date" name="date" required></label>
+            <label class="booking-form__checkbox"><input type="checkbox" required><span>Согласен на обработку данных и обратный звонок</span></label>
+            <button class="button button--dark button--full" type="submit">Записаться на заезд <span>↗</span></button>
+          </form>
+
+          <div class="booking-form__success" id="success-message" role="status" tabindex="-1" hidden>
+            <span>✓</span>
+            <h3>Заявка принята!</h3>
+            <p>Свяжемся с тобой в течение 15 минут и соберём идеальный заезд.</p>
+            <button type="button" id="new-booking">Отправить ещё одну</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="container footer__inner">
+        <a class="logo logo--footer" href="#top">ride<span>X</span></a>
+        <p>Эндуро-прокат для тех,<br>кому мало асфальта.</p>
+        <div class="footer__links">
+          <a href="#bikes">Мотоциклы</a>
+          <a href="#prices">Цены</a>
+          <a href="#certificate">Сертификаты</a>
+          <a href="#location">Контакты</a>
+        </div>
+        <div class="footer__socials">
+          <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram">INST</a>
+          <a href="https://t.me" target="_blank" rel="noopener noreferrer" aria-label="Telegram">TG</a>
+          <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" aria-label="YouTube">YT</a>
+        </div>
+      </div>
+      <div class="container footer__bottom"><span>© 2026 rideX</span><span>Катание на эндуро связано с риском. Соблюдайте инструкции.</span></div>
+    </footer>
+  </main>
+</body>
+</html>
