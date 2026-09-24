@@ -221,6 +221,87 @@
             </div>
         </div>
     </section>
+    <?php
+    $certificate_image = get_field('certificate_image');
+    $certificate_values = get_field('certificate_values');
+    $certificate_values_list = array_filter(
+        array_map('trim', explode("\n", $certificate_values))
+    );
+    ?>
+    <section class="certificate section" id="certificate">
+        <div class="container certificate__inner">
+            <div class="certificate__content">
+                <p class="eyebrow">Подарок, который не пылится</p>
+                <h2>Сертификат<br>на <span>драйв</span></h2>
+                <p>Выбирай номинал или конкретный заезд. Пришлём электронный сертификат на почту — можно подарить даже
+                    сегодня.</p>
+                <div class="certificate__values">
+                    <?php foreach ($certificate_values_list as $value) { ?>
+                        <a href="<?php echo esc_url(
+                                        'mailto:hello@ridex.ua?subject=' .
+                                            rawurlencode('Сертификат rideX на ' . $value . ' грн')
+                                    ); ?>">
+                            <?php echo esc_html(number_format((float) $value, 0, ',', ' ')); ?> ₴
+                        </a>
+                    <?php } ?>
+                </div>
+                <a class="button button--dark"
+                    href="mailto:hello@ridex.ua?subject=Хочу%20подарочный%20сертификат%20rideX">Заказать сертификат
+                    <span>↗</span></a>
+            </div>
+
+            <div class="certificate__visual">
+                <?php if ($certificate_image) { ?>
+                    <div class="certificate__photo">
+                        <img
+                            src="<?php echo esc_url($certificate_image['sizes']['large']); ?>"
+                            alt="<?php echo esc_attr($certificate_image['alt']); ?>"
+                            loading="lazy">
+                    </div>
+                <?php } ?>
+                <div class="gift-card">
+                    <div class="gift-card__logo">ride<span>X</span></div>
+                    <p>ПОДАРОЧНЫЙ<br>СЕРТИФИКАТ</p>
+                    <small>НА ЭНДУРО-ПРИКЛЮЧЕНИЕ</small>
+                    <b>5 500 ₴</b>
+                    <i>ЭМОЦИИ ВНУТРИ →</i>
+                </div>
+            </div>
+        </div>
+    </section>
+    <?php
+    $location_description = get_field('location_description');
+    $location_parking = get_field('location_parking');
+    $location_schedule = get_field('location_schedule');
+    $location_map_url = get_field('location_map_url');
+    ?>
+    <section class="location" id="location">
+        <div class="location__map" aria-label="Схематичная карта проезда к базе rideX">
+            <div class="location__map-grid"></div>
+            <div class="location__road location__road--one"></div>
+            <div class="location__road location__road--two"></div>
+            <div class="location__pin"><span>X</span><b>rideX</b></div>
+            <div class="location__label location__label--city">КИЕВ</div>
+            <div class="location__label location__label--forest">ГОЛОСЕЕВСКИЙ ЛЕС</div>
+        </div>
+        <div class="location__content">
+            <p class="eyebrow eyebrow--light">Как нас найти</p>
+            <h2>20 минут<br>от <span>Теремков</span></h2>
+            <p><?php echo esc_html($location_description); ?></p>
+            <div class="location__facts">
+                <div>
+                    <b>ПАРКОВКА</b>
+                    <span><?php echo esc_html($location_parking); ?></span>
+                </div>
+                <div>
+                    <b>ГРАФИК</b>
+                    <span><?php echo esc_html($location_schedule); ?></span>
+                </div>
+            </div>
+            <a class="button button--white" href="<?php echo esc_url($location_map_url); ?>" target="_blank"
+                rel="noopener noreferrer">Открыть район на карте <span>↗</span></a>
+        </div>
+    </section>
 </main>
 
 <?php get_footer(); ?>
