@@ -117,6 +117,110 @@
             <?php wp_reset_postdata(); ?>
         </div>
     </section>
+    <section class="benefits">
+        <div class="benefits__photo">
+            <img src="<?php echo esc_url(get_template_directory_uri() . '/images/bike-pro.jpg'); ?>"
+                alt="Райдер выполняет прыжок на эндуро-мотоцикле"
+                loading="lazy">
+        </div>
+        <div class="benefits__content">
+            <p class="eyebrow eyebrow--light">Включено в каждый заезд</p>
+            <h2>Тебе —<br>эмоции.<br><span>Остальное — нам.</span></h2>
+            <ul class="benefits__list">
+                <li><b>01</b><span><strong>Исправная техника</strong>Мотоцикл проходит проверку перед каждым стартом.</span></li>
+                <li><b>02</b><span><strong>Защита с головы до ног</strong>Экипировка включена в тариф и подбирается по размеру.</span></li>
+                <li><b>03</b><span><strong>Инструктор на маршруте</strong>Держит темп группы и помогает на сложных участках.</span></li>
+            </ul>
+        </div>
+    </section>
+    <section class="prices section" id="prices">
+        <div class="container">
+            <div class="section-heading section-heading--light">
+                <div>
+                    <p class="eyebrow eyebrow--light">Цены без сюрпризов</p>
+                    <h2>Сколько<br><span>огня?</span></h2>
+                </div>
+                <p class="section-heading__intro">Во всех тарифах уже есть мотоцикл, бензин, экипировка, инструктаж и
+                    сопровождение.</p>
+            </div>
+            <?php
+            $tariffs = new WP_Query([
+                'post_type' => 'tariff',
+                'posts_per_page' => -1,
+                'order' => 'ASC'
+            ]);
+            ?>
+            <div class="prices__grid">
+                <?php if ($tariffs->have_posts()) { ?>
+                    <?php while ($tariffs->have_posts()) { ?>
+                        <?php $tariffs->the_post(); ?>
+                        <?php
+                        $tariff_duration = get_field('tariff_duration');
+                        $tariff_description = get_field('tariff_description');
+                        $tariff_price = get_field('tariff_price');
+                        $tariff_features = get_field('tariff_features');
+                        $tariff_badge = get_field('tariff_badge');
+
+                        $tariff_features_list = array_filter(
+                            array_map('trim', explode("\n", $tariff_features))
+                        );
+                        $tariff_button_class = $tariff_badge
+                            ? 'button--dark'
+                            : 'button--outline';
+                        ?>
+                        <article class="price-card<?php echo $tariff_badge ? ' price-card--featured' : ''; ?>">
+                            <div class="price-card__header">
+                                <span><?php the_title(); ?></span>
+
+                                <?php if ($tariff_badge) { ?>
+                                    <b><?php echo esc_html($tariff_badge); ?></b>
+                                <?php } ?>
+                            </div>
+                            <h3><?php echo esc_html($tariff_duration); ?></h3>
+                            <p><?php echo esc_html($tariff_description); ?></p>
+                            <div class="price-card__value">
+                                <?php echo esc_html(number_format($tariff_price, 0, ',', ' ')); ?> ₴
+                            </div>
+                            <ul>
+                                <?php foreach ($tariff_features_list as $feature) { ?>
+                                    <li>✓ <?php echo esc_html($feature); ?></li>
+                                <?php } ?>
+                            </ul>
+                            <a class="button <?php echo esc_attr($tariff_button_class); ?> button--full" href="#booking">Выбрать тариф <span>↗</span></a>
+                        </article>
+                    <?php } ?>
+                <?php } ?>
+            </div>
+            <p class="prices__note">* Финальная стоимость зависит от выбранной модели и индивидуального формата.</p>
+        </div>
+        <?php wp_reset_postdata(); ?>
+    </section>
+    <section class="steps section">
+        <div class="container">
+            <div class="steps__title">
+                <p class="eyebrow eyebrow--light">Как всё проходит</p>
+                <h2>От заявки<br>до старта</h2>
+            </div>
+            <div class="steps__grid">
+                <article class="step-card"><span>01</span>
+                    <h3>Оставь заявку</h3>
+                    <p>Выбери дату, формат и оставь контакты — ответим в течение 15 минут.</p>
+                </article>
+                <article class="step-card"><span>02</span>
+                    <h3>Подбери экипировку</h3>
+                    <p>На базе выдадим шлем, защиту, форму, перчатки и мотоботы по размеру.</p>
+                </article>
+                <article class="step-card"><span>03</span>
+                    <h3>Пройди инструктаж</h3>
+                    <p>Объясним управление, стойку и безопасно потренируемся на площадке.</p>
+                </article>
+                <article class="step-card"><span>04</span>
+                    <h3>Жми на газ</h3>
+                    <p>Инструктор поведёт по маршруту под твой уровень — от лайта до хард-эндуро.</p>
+                </article>
+            </div>
+        </div>
+    </section>
 </main>
 
 <?php get_footer(); ?>
