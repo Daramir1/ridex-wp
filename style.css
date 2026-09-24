@@ -1,3 +1,10 @@
+/*
+Theme Name: RideX
+Author: Daramir
+Description: Тема сайта проката эндуро-мотоциклов
+Version: 1.0
+*/
+
 :root {
   --red: #f20d24;
   --red-dark: #ce071b;
@@ -296,9 +303,10 @@ img {
   font-weight: 900;
   letter-spacing: 0.9px;
   text-transform: uppercase;
-.text-link--light {
-  color: var(--white);
-}
+
+  .text-link--light {
+    color: var(--white);
+  }
 
 }
 
@@ -474,8 +482,8 @@ img {
 }
 
 .section-heading__intro,
-.certificate__content > p,
-.booking__content > p {
+.certificate__content>p,
+.booking__content>p {
   max-width: 480px;
   margin: 0;
   color: #5b5b5b;
@@ -484,9 +492,9 @@ img {
 }
 
 .bikes__grid {
-.bikes {
-  background: var(--paper);
-}
+  .bikes {
+    background: var(--paper);
+  }
 
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -763,14 +771,14 @@ img {
   text-transform: uppercase;
 }
 
-.price-card > p {
+.price-card>p {
   min-height: 48px;
   margin: 0;
   color: #6a6a6a;
   font-size: 13px;
 }
 
-.price-card--featured > p,
+.price-card--featured>p,
 .price-card--featured li {
   color: #a9a9a9;
 }
@@ -858,7 +866,7 @@ img {
   transform: translate(-20px, -20px);
 }
 
-.step-card > span {
+.step-card>span {
   color: var(--red);
   font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
   font-size: 45px;
@@ -888,7 +896,7 @@ img {
   align-items: center;
 }
 
-.certificate__content > p {
+.certificate__content>p {
   margin: 28px 0 34px;
 }
 
@@ -1136,7 +1144,7 @@ img {
   color: var(--red);
 }
 
-.location__content > p {
+.location__content>p {
   max-width: 480px;
   margin: 32px 0;
   color: #a5a5a5;
@@ -1194,7 +1202,7 @@ img {
   color: var(--black);
 }
 
-.booking__content > p {
+.booking__content>p {
   margin: 30px 0;
   color: rgba(255, 255, 255, 0.8);
 }
@@ -1281,10 +1289,11 @@ img {
 }
 
 .booking-form__success {
-.booking-form__success[hidden],
-#booking-form[hidden] {
-  display: none;
-}
+
+  .booking-form__success[hidden],
+  #booking-form[hidden] {
+    display: none;
+  }
 
   min-height: 477px;
   display: flex;
@@ -1294,7 +1303,7 @@ img {
   text-align: center;
 }
 
-.booking-form__success > span {
+.booking-form__success>span {
   width: 90px;
   height: 90px;
   display: grid;
@@ -1344,7 +1353,7 @@ img {
   color: var(--red);
 }
 
-.footer__inner > p {
+.footer__inner>p {
   margin: 0;
   color: #777;
   font-size: 13px;
@@ -1429,6 +1438,7 @@ img {
 }
 
 @media (max-width: 880px) {
+
   .container,
   .header {
     width: min(100% - 38px, 700px);
@@ -1607,6 +1617,7 @@ img {
 }
 
 @media (max-width: 560px) {
+
   .container,
   .header {
     width: calc(100% - 30px);
