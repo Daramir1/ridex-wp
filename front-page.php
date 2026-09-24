@@ -302,6 +302,22 @@
                 rel="noopener noreferrer">Открыть район на карте <span>↗</span></a>
         </div>
     </section>
+    <section class="booking section" id="booking">
+        <div class="container booking__inner">
+            <div class="booking__content">
+                <p class="eyebrow">Запись на заезд</p>
+                <h2>Готов<br><span>испачкаться?</span></h2>
+                <p>Оставь контакты. Подберём мотоцикл и маршрут под твой опыт, подтвердим свободное время по телефону или
+                    почте.</p>
+                <a class="booking__phone" href="tel:+380670000000">+38 067 000 00 00</a>
+                <a class="booking__email" href="mailto:hello@ridex.ua">hello@ridex.ua</a>
+            </div>
+
+            <div class="booking-form">
+                <?php echo do_shortcode('[contact-form-7 id="f8165c9" title="Запись на заезд RideX"]'); ?>
+            </div>
+        </div>
+    </section>
 </main>
 
 <?php get_footer(); ?>
