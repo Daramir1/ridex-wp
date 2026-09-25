@@ -140,7 +140,10 @@ $hero_next_start = get_field('hero_next_start');
                                     </p>
                                     <h3><?php the_title(); ?></h3>
                                 </div>
-                                <a href="#booking" aria-label="Забронировать <?php echo esc_attr(get_the_title()); ?>">↗</a>
+                                <a href="<?php the_permalink(); ?>"
+                                    aria-label="Подробнее о <?php echo esc_attr(get_the_title()); ?>">
+                                    ↗
+                                </a>
                             </div>
                             <ul class="bike-card__specs">
                                 <li><?php echo esc_html($power); ?> л.с.</li>
