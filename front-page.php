@@ -11,6 +11,13 @@ $site_phone_link = preg_replace(
     $site_phone
 );
 
+$hero_city = get_field('hero_city');
+$hero_title = get_field('hero_title');
+$hero_accent = get_field('hero_accent');
+$hero_description = get_field('hero_description');
+$hero_image = get_field('hero_image');
+$hero_price = get_field('hero_price');
+$hero_next_start = get_field('hero_next_start');
 ?>
 <main>
     <section class="hero" id="top">
@@ -39,9 +46,16 @@ $site_phone_link = preg_replace(
 
         <div class="hero__inner container">
             <div class="hero__content">
-                <p class="eyebrow eyebrow--light"><span>Киев</span> · эндуро-прокат</p>
-                <h1>За пределы <em>дорог</em></h1>
-                <p class="hero__lead">Техника, экипировка и маршрут уже готовы. Тебе остаётся только завести мотор.</p>
+                <p class="eyebrow eyebrow--light">
+                    <span><?php echo esc_html($hero_city); ?></span> · эндуро-прокат
+                </p>
+                <h1>
+                    <?php echo esc_html($hero_title); ?>
+                    <em><?php echo esc_html($hero_accent); ?></em>
+                </h1>
+                <p class="hero__lead">
+                    <?php echo esc_html($hero_description); ?>
+                </p>
                 <div class="hero__actions">
                     <a class="button button--white" href="#booking">Выбрать заезд <span>↗</span></a>
                     <a class="text-link text-link--light" href="#bikes">Смотреть парк <span>↓</span></a>
@@ -54,13 +68,22 @@ $site_phone_link = preg_replace(
             </div>
 
             <div class="hero__visual" aria-label="Эндуро-райдер на лесной трассе">
-                <div class="hero__photo">
-                    <img
-                        src="<?php echo esc_url(get_template_directory_uri() . '/images/hero-enduro.jpg'); ?>"
-                        alt="Эндуро-райдер едет по лесной трассе">
+                <?php if ($hero_image) { ?>
+                    <div class="hero__photo">
+                        <img
+                            src="<?php echo esc_url($hero_image['sizes']['large']); ?>"
+                            alt="<?php echo esc_attr($hero_image['alt']); ?>">
+                    </div>
+                <?php } ?>
+                <div class="hero__badge">
+                    <span>от</span>
+                    <strong><?php echo esc_html(number_format($hero_price, 0, ',', ' ')); ?></strong>
+                    <span>₴ / заезд</span>
                 </div>
-                <div class="hero__badge"><span>от</span><strong>3 490</strong><span>₴ / заезд</span></div>
-                <div class="hero__route"><span class="hero__pulse"></span>Ближайший старт: сегодня, 16:30</div>
+                <div class="hero__route">
+                    <span class="hero__pulse"></span>
+                    Ближайший старт: <?php echo esc_html($hero_next_start); ?>
+                </div>
                 <div class="hero__decoration" aria-hidden="true">X</div>
             </div>
         </div>
