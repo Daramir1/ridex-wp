@@ -1,4 +1,17 @@
-<?php get_header(); ?>
+<?php
+
+get_header();
+
+$site_phone = get_field('site_phone');
+$site_email = get_field('site_email');
+
+$site_phone_link = preg_replace(
+    '/[^0-9+]/',
+    '',
+    $site_phone
+);
+
+?>
 <main>
     <section class="hero" id="top">
         <header class="header">
@@ -12,7 +25,9 @@
             </nav>
 
             <div class="header__actions">
-                <a class="header__phone" href="tel:+380670000000">+38 067 000 00 00</a>
+                <a class="header__phone" href="<?php echo esc_url('tel:' . $site_phone_link); ?>">
+                    <?php echo esc_html($site_phone); ?>
+                </a>
                 <a class="button button--small button--white" href="#booking">Записаться</a>
             </div>
 
@@ -309,8 +324,12 @@
                 <h2>Готов<br><span>испачкаться?</span></h2>
                 <p>Оставь контакты. Подберём мотоцикл и маршрут под твой опыт, подтвердим свободное время по телефону или
                     почте.</p>
-                <a class="booking__phone" href="tel:+380670000000">+38 067 000 00 00</a>
-                <a class="booking__email" href="mailto:hello@ridex.ua">hello@ridex.ua</a>
+                <a class="booking__phone" href="<?php echo esc_url('tel:' . $site_phone_link); ?>">
+                    <?php echo esc_html($site_phone); ?>
+                </a>
+                <a class="booking__email" href="<?php echo esc_url('mailto:' . $site_email); ?>">
+                    <?php echo esc_html($site_email); ?>
+                </a>
             </div>
 
             <div class="booking-form">
