@@ -4,6 +4,11 @@ Author: Daramir
 Description: Тема сайта проката эндуро-мотоциклов
 Version: 1.0
 */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
 
 :root {
   --red: #f20d24;
@@ -1915,4 +1920,48 @@ img {
 
 .single-bike__back:hover {
   color: var(--accent, #f20d2f);
+}
+
+.booking__content,
+.booking-form,
+.wpcf7,
+.wpcf7-form,
+.booking-form__row {
+  min-width: 0;
+}
+
+.booking-form input,
+.booking-form select,
+.booking-form textarea {
+  box-sizing: border-box;
+  max-width: 100%;
+}
+
+.booking-form input[type="checkbox"] {
+  width: auto;
+}
+
+@media (max-width: 700px) {
+
+  .booking__inner,
+  .booking-form__row {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .booking__content,
+  .booking-form {
+    width: 100%;
+  }
+}
+
+@media (max-width: 420px) {
+  .booking__content h2 {
+    font-size: 14vw;
+    line-height: 0.9;
+  }
+
+  .booking__content h2 span {
+    max-width: 100%;
+    white-space: normal;
+  }
 }
